@@ -1,0 +1,117 @@
+<ion-content class="ion-padding">
+  <div class="auth-container">
+    <img src="assets/images/logo.png" alt="PawFeast Logo" class="logo" />
+
+    <div class="welcome-text">
+      <h1>PawFeast</h1>
+      <h2>{{ isLoginMode ? 'LOGIN' : 'REGISTER' }}</h2>
+    </div>
+
+    <!-- Login or Register form -->
+    <form (ngSubmit)="isLoginMode ? onLogin() : onRegister()" #authForm="ngForm">
+      <div class="input-container">
+        <ion-item lines="none" [class.invalid]="!authForm.form.controls['email']?.valid">
+          <ion-icon name="mail" slot="start"></ion-icon>
+          <ion-input
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            required
+            placeholder="Enter your email"
+            aria-label="Email"
+          ></ion-input>
+        </ion-item>
+        <div *ngIf="authForm.form.controls['email']?.invalid && authForm.form.controls['email']?.touched" class="error-text">
+          Please enter a valid email address.
+        </div>
+      </div>
+
+      <div class="input-container">
+        <ion-item lines="none" [class.invalid]="!authForm.form.controls['password']?.valid">
+          <ion-icon name="lock-closed" slot="start"></ion-icon>
+          <ion-input
+            [type]="passwordVisible ? 'text' : 'password'"
+            [(ngModel)]="password"
+            name="password"
+            required
+            placeholder="Enter your password"
+            aria-label="Password"
+          ></ion-input>
+          <ion-icon
+            [name]="passwordVisible ? 'eye-off' : 'eye'"
+            slot="end"
+            (click)="togglePasswordVisibility()"
+            aria-label="Toggle password visibility"
+          ></ion-icon>
+        </ion-item>
+      </div>
+
+      <!-- Additional fields for Register mode -->
+      <div *ngIf="!isLoginMode" class="input-container">
+        <ion-item lines="none">
+          <ion-icon name="person" slot="start"></ion-icon>
+          <ion-input
+            [(ngModel)]="username"
+            name="username"
+            required
+            placeholder="Enter your username"
+            aria-label="Username"
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <div *ngIf="!isLoginMode" class="input-container">
+        <ion-item lines="none">
+          <ion-icon name="call" slot="start"></ion-icon>
+          <ion-input
+            [(ngModel)]="phoneNumber"
+            name="phoneNumber"
+            required
+            placeholder="Enter your phone number"
+            aria-label="Phone Number"
+          ></ion-input>
+        </ion-item>
+      </div>
+
+      <div *ngIf="!isLoginMode" class="input-container">
+        <ion-item lines="none">
+          <ion-icon name="lock-closed" slot="start"></ion-icon>
+          <ion-input
+            [type]="confirmPasswordVisible ? 'text' : 'password'"
+            [(ngModel)]="confirmPassword"
+            name="confirmPassword"
+            required
+            placeholder="Confirm your password"
+            aria-label="Confirm Password"
+          ></ion-input>
+          <ion-icon
+            [name]="confirmPasswordVisible ? 'eye-off' : 'eye'"
+            slot="end"
+            (click)="toggleConfirmPasswordVisibility()"
+            aria-label="Toggle confirm password visibility"
+          ></ion-icon>
+        </ion-item>
+      </div>
+
+      <ion-button
+        class="auth-btn"
+        type="submit"
+        [disabled]="!authForm.valid"
+        expand="block"
+      >
+        {{ isLoginMode ? 'Login' : 'Register' }}
+      </ion-button>
+    </form>
+
+    <div *ngIf="isLoginMode" class="forgot-password-link">
+      <ion-button fill="clear" (click)="onResetPassword()">Forgot password?</ion-button>
+    </div>
+
+    <div class="toggle-link">
+      <p>{{ isLoginMode ? "Don't have an account?" : "Already have an account?" }}</p>
+      <ion-button fill="clear" (click)="toggleMode()">
+        {{ isLoginMode ? 'Register' : 'Login' }}
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

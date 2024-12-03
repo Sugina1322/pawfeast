@@ -1,0 +1,130 @@
+ion-content {
+    --background: url('/assets/images/splash.jpg') no-repeat center center;
+    --background-size: cover; /* Ensures the image covers the entire background */
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full-screen height */
+  }
+  
+  .contact-container {
+    width: 100%;
+    max-width: 600px; /* Adjust the width for readability */
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  ion-card {
+    background: transparent;
+    box-shadow: none;
+    border-radius: 10px;
+  }
+  
+  ion-card-header {
+    background: #A8E6CF;
+    padding: 15px;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    margin-bottom: 25px; /* Added margin to create space below the header */
+  }
+  
+  ion-card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .input-container {
+    margin-bottom: 25px;
+    position: relative;
+  }
+  
+  ion-item {
+    --inner-padding-start: 15px;
+    --inner-padding-end: 15px;
+    border-radius: 12px;
+    background: #f0f0f0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+  }
+  
+  ion-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  ion-input,
+  ion-textarea {
+    width: 100%;
+    --padding-start: 15px;
+    --padding-end: 15px;
+    background: transparent;
+    border: none;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  ion-textarea {
+    min-height: 120px;
+    max-height: 200px;
+  }
+  
+  ion-button.submit-btn {
+    margin-top: 20px;
+    color: white;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 12px;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+  
+  ion-button.submit-btn:hover {
+    background-color: #1e88e5;
+  }
+  
+  ion-button:disabled {
+    background-color: #b2dfdb;
+    cursor: not-allowed;
+  }
+  
+  .error-text {
+    font-size: 12px;
+    color: #f44336;
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .contact-info p {
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .contact-info p strong {
+    font-weight: bold;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ion-back-button {
+    --color: #2196f3;
+  }
+  
+  ion-back-button:hover {
+    --color: #1e88e5;
+  }
+  

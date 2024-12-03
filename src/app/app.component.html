@@ -1,0 +1,89 @@
+<ion-app>
+  <ion-menu contentId="main-content">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>
+        <!-- Home Button -->
+        <ion-button 
+          expand="block" 
+          fill="clear" 
+          routerLink="/home" 
+          class="menu-btn mint-green">
+          <ion-icon name="home-outline" slot="start"></ion-icon>
+          <ion-label>Home</ion-label>
+        </ion-button>
+
+        <!-- Profile Button -->
+        <ion-button 
+          expand="block" 
+          fill="clear" 
+          routerLink="/profile" 
+          class="menu-btn lavender">
+          <ion-icon name="person-outline" slot="start"></ion-icon>
+          <ion-label>Profile</ion-label>
+        </ion-button>
+
+        <!-- About Button -->
+        <ion-button 
+          expand="block" 
+          fill="clear" 
+          routerLink="/about" 
+          class="menu-btn light-blue">
+          <ion-icon name="information-circle-outline" slot="start"></ion-icon>
+          <ion-label>About</ion-label>
+        </ion-button>
+
+        <!-- About Developers Button (new) -->
+        <ion-button 
+          expand="block" 
+          fill="clear" 
+          routerLink="/about-developers" 
+          class="menu-btn light-yellow">
+          <ion-icon name="people-outline" slot="start"></ion-icon>
+          <ion-label>About the Developers</ion-label>
+        </ion-button>
+
+        <!-- Contact Us Button (new) -->
+        <ion-button 
+          expand="block" 
+          fill="clear" 
+          routerLink="/contact" 
+          class="menu-btn light-green">
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-label>Contact Us</ion-label>
+        </ion-button>
+
+        <!-- Cart Button -->
+        <ion-button 
+          expand="block" 
+          fill="clear" 
+          routerLink="/cart" 
+          class="menu-btn orange">
+          <ion-icon name="cart-outline" slot="start"></ion-icon>
+          <ion-label>Cart</ion-label>
+        </ion-button>
+
+        <!-- Logout Button -->
+        <ion-button 
+          expand="block" 
+          fill="clear" 
+          routerLink="/auth" 
+          class="menu-btn peach">
+          <ion-icon name="log-out-outline" slot="start"></ion-icon>
+          <ion-label>Logout</ion-label>
+        </ion-button>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+
+  <div class="ion-page" id="main-content">
+    <ion-header></ion-header>
+    <ion-content class="ion-padding">
+      <ion-router-outlet></ion-router-outlet>
+    </ion-content>
+  </div>
+</ion-app>

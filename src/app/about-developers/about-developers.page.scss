@@ -1,0 +1,79 @@
+ion-content {
+    --background: url('/assets/images/splash.jpg') no-repeat center center;
+    --background-size: cover;
+    height: 100%;
+    padding: 0;
+}
+
+ion-card {
+    background: #B3E5FC; /* Set the background color to #B3E5FC */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+
+.developer-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+ion-thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.developer-description h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.developer-description p {
+    font-size: 14px;
+    color: var(--ion-color-medium);
+    margin-top: 5px;
+}
+
+ion-card-title {
+    font-weight: bold;
+    color: #333;
+    font-size: 22px;
+    text-align: center;
+}
+
+ion-card-header {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 15px 15px 0 0;
+}
+
+ion-card-content {
+    padding: 15px;
+}
+
+ion-item {
+    --inner-padding-end: 10px;
+    --inner-padding-start: 10px;
+}
+
+.developer-contacts ion-item {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.developer-contacts ion-label {
+    font-weight: bold;
+}
+
+.developer-contacts ion-text a {
+    color: var(--ion-color-primary);
+    text-decoration: none;
+}
+
+.developer-contacts ion-text a:hover {
+    text-decoration: underline;
+}

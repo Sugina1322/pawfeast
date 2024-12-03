@@ -1,0 +1,53 @@
+ion-content {
+    --background: transparent;
+  }
+  
+  .splash-screen {
+    background-image: url('/assets/images/splash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .logo {
+    width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 30px; /* Space between logo and loading bar */
+  }
+  
+  .loading-bar {
+    position: relative;
+    width: 50%;
+    height: 12px; /* Adjust thickness */
+    background: linear-gradient(90deg, #a8e6cf, #a8e6cf); /* Use the saved color */
+    border-radius: 50px; /* Rounded edges */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  }
+  
+  .loading-progress {
+    position: absolute;
+    width: 40%; /* Initial width of the shimmer */
+    height: 100%;
+    background: linear-gradient(90deg, #b3e5fc, #4CC9FE);
+    border-radius: 50px; /* Match the container's rounded edges */
+    animation: loading-shimmer 2s infinite ease-in-out;
+  }
+  
+  @keyframes loading-shimmer {
+    0% {
+      left: -40%; /* Start outside the container */
+    }
+    50% {
+      left: 30%; /* Shimmer expands across the bar */
+    }
+    100% {
+      left: 100%; /* Move completely outside */
+    }
+  }
+  

@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Contact Us</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="contact-container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Get in Touch</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form (ngSubmit)="submitContactForm(contactForm)" #contactForm="ngForm">
+
+          <!-- Name Input -->
+          <div class="input-container">
+            <ion-item lines="none" [class.invalid]="!contactForm.form.controls['name']?.valid">
+              <ion-icon name="person" slot="start"></ion-icon>
+              <ion-input
+                type="text"
+                [(ngModel)]="name"
+                name="name"
+                required
+                placeholder="Enter your name"
+                aria-label="Name"
+              ></ion-input>
+            </ion-item>
+            <div *ngIf="contactForm.form.controls['name']?.invalid && contactForm.form.controls['name']?.touched" class="error-text">
+              Name is required.
+            </div>
+          </div>
+
+          <!-- Email Input -->
+          <div class="input-container">
+            <ion-item lines="none" [class.invalid]="!contactForm.form.controls['email']?.valid">
+              <ion-icon name="mail" slot="start"></ion-icon>
+              <ion-input
+                type="email"
+                [(ngModel)]="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+                aria-label="Email"
+              ></ion-input>
+            </ion-item>
+            <div *ngIf="contactForm.form.controls['email']?.invalid && contactForm.form.controls['email']?.touched" class="error-text">
+              Please enter a valid email address.
+            </div>
+          </div>
+
+          <!-- Message Input -->
+          <div class="input-container">
+            <ion-item lines="none" [class.invalid]="!contactForm.form.controls['message']?.valid">
+              <ion-icon name="chatbox" slot="start"></ion-icon>
+              <ion-textarea
+                [(ngModel)]="message"
+                name="message"
+                required
+                placeholder="Your message"
+                aria-label="Message"
+              ></ion-textarea>
+            </ion-item>
+            <div *ngIf="contactForm.form.controls['message']?.invalid && contactForm.form.controls['message']?.touched" class="error-text">
+              Message is required.
+            </div>
+          </div>
+
+          <ion-button
+            class="submit-btn"
+            type="submit"
+            [disabled]="!contactForm.valid"
+            expand="block"
+          >
+            Send Message
+          </ion-button>
+        </form>
+
+        <div class="contact-info">
+          <p><strong>Phone:</strong> +123 456 7890</p>
+          <p><strong>Email:</strong> pawfeast.com</p>
+          <p><strong>Address:</strong> 1234 Aurora Boulevard, Quezon City, Philippines</p>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

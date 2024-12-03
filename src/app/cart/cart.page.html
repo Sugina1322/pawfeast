@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Shopping Cart</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let item of cartItems">
+      <ion-thumbnail slot="start">
+        <img [src]="item.image" alt="{{ item.name }}">
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ item.name }}</h2>
+        <p>{{ item.description }}</p>
+        <p>₱{{ item.price | number: '1.2-2' }}</p>
+        <div class="quantity-control">
+         
+          <ion-button fill="outline" (click)="decreaseQuantity(item)" [disabled]="item.quantity <= 1">
+            <ion-icon name="remove"></ion-icon>
+          </ion-button>
+          <span>{{ item.quantity }}</span>
+          <ion-button fill="outline" (click)="increaseQuantity(item)">
+            <ion-icon name="add"></ion-icon>
+          </ion-button>
+        </div>
+        <p><strong>Subtotal: ₱{{ item.price * item.quantity | number: '1.2-2' }}</strong></p>
+      </ion-label>
+     
+      <ion-button (click)="removeFromCart(item)" color="danger">
+        Remove
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+
+  <div class="total-price">
+    <h3>Total: ₱{{ totalPrice | number: '1.2-2' }}</h3>
+  </div>
+
+
+  <ion-button expand="block" color="success" (click)="proceedToCheckout()">Proceed to Checkout</ion-button>
+  <ion-button expand="block" fill="outline" color="danger" (click)="clearCart()">Clear Cart</ion-button>
+
+  <ion-button *ngIf="showOrderAgainButton" expand="block" color="success" (click)="orderAgain()">
+    Order Again
+  </ion-button>
+</ion-content>

@@ -1,0 +1,33 @@
+<ion-content>
+  <div class="main-content">
+    <h1>Welcome to PawFeast!</h1>
+    <p>Your favorite app for pets!</p>
+    
+  <!-- Cards for Items -->
+  <div class="card-container">
+    <!-- Adult Card -->
+    <ion-card class="item-card" (click)="goToAdultPage()">
+      <img src="/assets/images/adult.png" alt="Adult Food" />
+      <div class="item-description">Adult</div>
+    </ion-card>
+
+    <!-- Puppy Card -->
+    <ion-card class="item-card" (click)="goToPuppyPage()">
+      <img src="/assets/images/puppy.png" alt="Puppy Food" />
+      <div class="item-description">Puppy</div>
+    </ion-card>
+
+    <!-- Treats Card -->
+    <ion-card class="item-card" (click)="goToTreatPage()">
+      <img src="/assets/images/treat.png" alt="Treats" />
+      <div class="item-description">Treats</div>
+    </ion-card>
+  </div>
+
+  <!-- Profile Icon -->
+  <ion-button fill="clear" (click)="goToProfile()" class="profile-icon-button">
+    <ion-icon name="person-circle" size="large"></ion-icon>
+  </ion-button>
+ 
+  </div>
+</ion-content>

@@ -1,0 +1,24 @@
+.menu-btn {
+    display: flex; /* Use flexbox for alignment */
+    justify-content: flex-start; /* Align items to the left */
+    align-items: center; /* Vertically center the icon and text */
+    margin: 10px 0; /* Add vertical spacing */
+    font-size: 0.9rem; /* Make the text smaller */
+    border-radius: 8px; /* Slightly rounded corners */
+    padding: 6px 12px; /* Adjust button padding */
+    background-color: #A8E6CF; /* Mint green background */
+    color: #000; /* Black text for contrast */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Add hover effects */
+  }
+  
+  .menu-btn ion-icon {
+    font-size: 1rem; /* Adjust icon size */
+    margin-right: 8px; /* Add spacing between the icon and text */
+  }
+  
+  .menu-btn:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+    background-color: #92d6ba; /* Darken mint green on hover */
+  }
+  

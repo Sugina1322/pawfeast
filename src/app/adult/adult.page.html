@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Adult Dog Products</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-list">
+    <!-- Dynamically generate product cards -->
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{ product.name }}" class="product-image" />
+      <h2 class="product-name">{{ product.name }}</h2>
+      <p class="product-description">{{ product.description }}</p>
+      <p class="product-price">Price: ₱{{ product.price | number: '1.2-2' }}</p>
+
+      <!-- Quantity Controls -->
+      <div class="quantity-control">
+        <button class="quantity-button" (click)="decreaseQuantity(product)">-</button>
+        <span class="quantity-display">{{ product.quantity }}</span>
+        <button class="quantity-button" (click)="increaseQuantity(product)">+</button>
+      </div>
+
+      <!-- Add to Cart Button -->
+      <ion-button color="success" (click)="addToCart(product)">
+        Add to Cart
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

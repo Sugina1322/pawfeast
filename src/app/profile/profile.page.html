@@ -1,0 +1,65 @@
+<ion-content class="profile-background ion-padding">
+  <!-- Profile Information Section -->
+  <div class="profile-info">
+    <!-- Logo and Welcome Section -->
+    <div class="logo-container ion-text-center">
+      <img src="assets/images/logo.png" alt="PawFeast Logo" class="logo" />
+      <h2>Welcome to PawFeast</h2>
+    </div>
+
+    <!-- User Profile Card -->
+    <ion-card class="profile-card">
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">
+          <!-- Display User's Profile Picture or Default Profile Icon -->
+          <div class="profile-picture-container">
+            <!-- Default Profile Icon (if no image is uploaded) -->
+            <ion-icon 
+              *ngIf="!profilePicUrl" 
+              name="person-circle" 
+              class="profile-picture"
+              style="font-size: 100px; color: #ccc;">
+            </ion-icon>
+            
+            <!-- Image (if uploaded) -->
+            <img
+              *ngIf="profilePicUrl"
+              [src]="profilePicUrl"
+              alt="Profile Picture"
+              class="profile-picture"
+            />
+            <input
+              type="file"
+              id="fileInput"
+              accept="image/*"
+              hidden
+              (change)="onFileSelected($event)"
+            />
+          </div>
+          <span class="username">{{ username }}</span>
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p><strong>Phone Number:</strong> {{ phoneNumber }}</p>
+        <div class="button-group">
+          <ion-button expand="block" color="primary" (click)="triggerFileInput()">
+            <ion-icon slot="start" name="camera"></ion-icon>
+            Upload Picture
+          </ion-button>
+          <ion-button expand="block" color="secondary" (click)="editUsername()">
+            <ion-icon slot="start" name="create"></ion-icon>
+            Edit Username
+          </ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- Logout Button with routerLink -->
+    <div class="logout-button">
+      <ion-button color="danger" routerLink="/auth">
+        <ion-icon slot="start" name="log-out-outline"></ion-icon>
+        Logout
+      </ion-button>
+    </div>
+  </div>
+</ion-content>
